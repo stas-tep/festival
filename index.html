@@ -40,6 +40,23 @@ body{background:#05060f;font-family:'Inter',-apple-system,sans-serif;min-height:
     .stage-name{font-size:18px}
 }
 
+/* ===== Версия сайта ===== */
+.version-tag{
+    position:absolute;
+    bottom:calc(10px + env(safe-area-inset-bottom, 0px));
+    right:14px;
+    font-size:11px;
+    font-weight:800;
+    color:rgba(147,197,253,.7);
+    letter-spacing:1.2px;
+    font-family:'Courier New',monospace;
+    text-shadow:0 0 8px rgba(147,197,253,.6);
+    z-index:6;
+    pointer-events:none;
+    user-select:none;
+    -webkit-user-select:none;
+}
+
 .aurora{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
 .aurora-blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.55}
 .blob-1{width:280px;height:280px;background:radial-gradient(circle,#3b82f6 0%,transparent 70%);top:-80px;left:-80px;animation:float1 18s ease-in-out infinite}
@@ -117,8 +134,15 @@ body{background:#05060f;font-family:'Inter',-apple-system,sans-serif;min-height:
     letter-spacing:1.2px;text-transform:uppercase;
     color:rgba(255,255,255,.75);
     transition:color .22s ease;
+    text-align:center;
 }
 .quick-tile:hover .quick-tile-label{color:#fff}
+/* длинные подписи у плиток установки */
+.quick-tile--long .quick-tile-label{
+    font-size:9px;
+    letter-spacing:0.5px;
+    line-height:1.3;
+}
 
 .snowdrift{position:absolute;bottom:0;left:0;right:0;height:200px;z-index:5;pointer-events:none;overflow:hidden}
 .snowdrift-svg{position:absolute;bottom:0;left:0;width:100%;height:100%;display:block;pointer-events:none}
@@ -235,6 +259,67 @@ body{background:#05060f;font-family:'Inter',-apple-system,sans-serif;min-height:
 .review-name{font-size:13px;font-weight:800;color:#fff}
 .review-text{font-size:12.5px;color:rgba(255,255,255,.65);line-height:1.5}
 
+/* ===== Инструкция установки (стеклянные шаги) ===== */
+.install-step{
+    display:flex;gap:12px;
+    padding:14px;
+    background:linear-gradient(160deg,rgba(147,197,253,.1) 0%,rgba(147,197,253,.04) 100%);
+    border:1px solid rgba(147,197,253,.22);
+    border-radius:16px;
+    margin-bottom:10px;
+    position:relative;overflow:hidden;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 4px 12px rgba(0,0,0,.15);
+    transition:.25s ease;
+}
+.install-step::after{
+    content:'';position:absolute;top:0;left:0;right:0;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);
+    pointer-events:none;
+}
+.install-step:hover{
+    background:linear-gradient(160deg,rgba(147,197,253,.16) 0%,rgba(147,197,253,.07) 100%);
+    border-color:rgba(147,197,253,.4);
+    transform:translateY(-2px);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.15),0 8px 20px rgba(59,130,246,.25);
+}
+.install-step-icon{
+    flex-shrink:0;width:42px;height:42px;border-radius:12px;
+    background:linear-gradient(135deg,rgba(59,130,246,.35) 0%,rgba(139,92,246,.35) 100%);
+    border:1px solid rgba(147,197,253,.35);
+    display:flex;justify-content:center;align-items:center;
+    font-size:22px;line-height:1;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 4px 12px rgba(0,0,0,.3);
+    position:relative;
+}
+.install-step-body{flex:1;display:flex;flex-direction:column;gap:3px;justify-content:center}
+.install-step-title{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:900;color:#fff;line-height:1.3}
+.install-step-num{
+    flex-shrink:0;width:18px;height:18px;border-radius:50%;
+    background:linear-gradient(135deg,#3b82f6,#8b5cf6);
+    font-size:10px;font-weight:900;color:#fff;
+    display:flex;justify-content:center;align-items:center;
+    box-shadow:0 2px 8px rgba(59,130,246,.5);
+}
+.install-step-desc{font-size:11.5px;color:rgba(255,255,255,.6);line-height:1.45}
+.install-step-desc strong{color:#93c5fd;font-weight:800}
+.install-tip{
+    margin-top:14px;padding:14px 16px;
+    background:linear-gradient(135deg,rgba(250,204,21,.12) 0%,rgba(245,158,11,.05) 100%);
+    border:1px solid rgba(250,204,21,.3);
+    border-radius:14px;
+    display:flex;gap:10px;align-items:flex-start;
+    font-size:11.5px;color:rgba(255,255,255,.8);line-height:1.5;
+    position:relative;overflow:hidden;
+}
+.install-tip::after{
+    content:'';position:absolute;top:0;left:0;right:0;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(250,204,21,.6),transparent);
+    pointer-events:none;
+}
+.install-tip-icon{font-size:18px;flex-shrink:0;filter:drop-shadow(0 0 8px rgba(250,204,21,.6))}
+.install-tip-text strong{color:#facc15;font-weight:800}
+
+/* ===== Колесо ===== */
 .wheel-desc{font-size:12px;color:rgba(255,255,255,.65);line-height:1.6;margin-bottom:18px;text-align:center}
 .wheel-desc strong{color:#facc15;font-weight:800}
 .wheel-form{margin-bottom:16px}
@@ -310,14 +395,14 @@ body{background:#05060f;font-family:'Inter',-apple-system,sans-serif;min-height:
         <div class="quick-tile-icon">🎟️</div>
         <div class="quick-tile-label">Колесо</div>
     </div>
-    <a class="quick-tile" href="https://t.me/zima_2026_ru" target="_blank" rel="noopener">
-        <div class="quick-tile-icon">📢</div>
-        <div class="quick-tile-label">Telegram</div>
-    </a>
-    <a class="quick-tile" href="https://" target="_blank" rel="noopener">
-        <div class="quick-tile-icon">???</div>
-        <div class="quick-tile-label">СКОРО...</div>
-    </a>
+    <div class="quick-tile quick-tile--long" onclick="openPanel('install-ios')">
+        <div class="quick-tile-icon">📱</div>
+        <div class="quick-tile-label">Добавить на iOS</div>
+    </div>
+    <div class="quick-tile quick-tile--long" onclick="openPanel('install-android')">
+        <div class="quick-tile-icon">🤖</div>
+        <div class="quick-tile-label">Добавить на Android</div>
+    </div>
 </div>
 </div>
 
@@ -337,6 +422,9 @@ body{background:#05060f;font-family:'Inter',-apple-system,sans-serif;min-height:
 <div class="drift-btn drift-btn-main" onclick="window.location.href='https://forms.gle/BHL8Z7bCw57KiqP5A'"><span class="drift-btn-icon">📝</span><div class="drift-btn-title">Заявка</div></div>
 <div class="drift-btn" onclick="openPanel('faq')"><span class="drift-btn-icon">❓</span><div class="drift-btn-title">FAQ</div></div>
 </div>
+
+<!-- ===== Версия сайта (еле заметная) ===== -->
+<div class="version-tag">v1.04</div>
 
 <!-- ===== Панель: 1 МЕСТО ===== -->
 <div class="panel-overlay" id="overlay-place1" onclick="closePanel('place1')"></div>
@@ -450,6 +538,94 @@ body{background:#05060f;font-family:'Inter',-apple-system,sans-serif;min-height:
 <div class="review-item"><div class="review-head"><div class="review-avatar">К</div><div class="review-name">Карнэлия</div></div><div class="review-text">Всё отлично, деньги пришли сразу</div></div>
 <div class="review-item"><div class="review-head"><div class="review-avatar">Ю</div><div class="review-name">юра24_04</div></div><div class="review-text">Каждый раз выигрываю и радуюсь, всем советую</div></div>
 <div class="review-item"><div class="review-head"><div class="review-avatar">К</div><div class="review-name">КИТЗК</div></div><div class="review-text">Призы классные, условия простые, спасибо за эмоции</div></div>
+</div>
+
+<!-- ===== Установка на iOS ===== -->
+<div class="panel-overlay" id="overlay-install-ios" onclick="closePanel('install-ios')"></div>
+<div class="panel" id="panel-install-ios">
+<div class="panel-handle"></div>
+<div class="panel-header"><div class="panel-title">УСТАНОВКА НА IPHONE</div><div class="panel-close" onclick="closePanel('install-ios')">✕</div></div>
+
+<div class="install-step">
+<div class="install-step-icon">🧭</div>
+<div class="install-step-body">
+<div class="install-step-title"><span class="install-step-num">1</span> Открой сайт в Safari</div>
+<div class="install-step-desc">Установка работает <strong>только в Safari</strong>. Если открыто в другом браузере — скопируй ссылку и открой в Safari.</div>
+</div>
+</div>
+
+<div class="install-step">
+<div class="install-step-icon">⬆️</div>
+<div class="install-step-body">
+<div class="install-step-title"><span class="install-step-num">2</span> Нажми «Поделиться»</div>
+<div class="install-step-desc">Внизу экрана — кнопка <strong>квадрат со стрелкой вверх</strong>.</div>
+</div>
+</div>
+
+<div class="install-step">
+<div class="install-step-icon">🏠</div>
+<div class="install-step-body">
+<div class="install-step-title"><span class="install-step-num">3</span> «На экран Домой»</div>
+<div class="install-step-desc">Прокрути меню вниз и выбери <strong>«На экран Домой»</strong>.</div>
+</div>
+</div>
+
+<div class="install-step">
+<div class="install-step-icon">✅</div>
+<div class="install-step-body">
+<div class="install-step-title"><span class="install-step-num">4</span> Нажми «Добавить»</div>
+<div class="install-step-desc">Готово! Иконка <strong>«Зима 2026»</strong> появится на главном экране.</div>
+</div>
+</div>
+
+<div class="install-tip">
+<div class="install-tip-icon">💡</div>
+<div class="install-tip-text"><strong>Совет:</strong> если не видишь «На экран Домой» — прокрути меню «Поделиться» вниз, пункт находится в списке действий.</div>
+</div>
+</div>
+
+<!-- ===== Установка на Android ===== -->
+<div class="panel-overlay" id="overlay-install-android" onclick="closePanel('install-android')"></div>
+<div class="panel" id="panel-install-android">
+<div class="panel-handle"></div>
+<div class="panel-header"><div class="panel-title">УСТАНОВКА НА ANDROID</div><div class="panel-close" onclick="closePanel('install-android')">✕</div></div>
+
+<div class="install-step">
+<div class="install-step-icon">🌐</div>
+<div class="install-step-body">
+<div class="install-step-title"><span class="install-step-num">1</span> Открой сайт в Chrome</div>
+<div class="install-step-desc">Используй <strong>Chrome</strong> или другой браузер на Chromium (Edge, Opera).</div>
+</div>
+</div>
+
+<div class="install-step">
+<div class="install-step-icon">⋮</div>
+<div class="install-step-body">
+<div class="install-step-title"><span class="install-step-num">2</span> Нажми три точки</div>
+<div class="install-step-desc">Меню в <strong>правом верхнем углу</strong> браузера.</div>
+</div>
+</div>
+
+<div class="install-step">
+<div class="install-step-icon">📲</div>
+<div class="install-step-body">
+<div class="install-step-title"><span class="install-step-num">3</span> «Установить приложение»</div>
+<div class="install-step-desc">Или пункт <strong>«Добавить на главный экран»</strong>.</div>
+</div>
+</div>
+
+<div class="install-step">
+<div class="install-step-icon">✅</div>
+<div class="install-step-body">
+<div class="install-step-title"><span class="install-step-num">4</span> Подтверди установку</div>
+<div class="install-step-desc">Готово! Иконка <strong>«Зима 2026»</strong> появится на главном экране.</div>
+</div>
+</div>
+
+<div class="install-tip">
+<div class="install-tip-icon">💡</div>
+<div class="install-tip-text"><strong>Совет:</strong> если пункта нет — обнови Chrome до последней версии и открой сайт заново.</div>
+</div>
 </div>
 
 <!-- ===== Колесо ===== -->
@@ -848,7 +1024,7 @@ function getMskDate(){
 }
 
 function isDropTime(){
-    return true; // Теперь колесо всегда открыто
+    return true;
 }
 
 function findNextDropDate(){
@@ -1069,5 +1245,3 @@ async function spinWheel(){
     }, 5100);
 }
 </script>
-</body>
-</html>
