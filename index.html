@@ -383,6 +383,16 @@ body{background:#05060f;font-family:'Inter',-apple-system,sans-serif;min-height:
 <div class="stage-left"><div class="stage-name">3 МЕСТО</div><div class="stage-date">08.12.2026</div></div>
 <div class="stage-info-btn">Информация</div>
 </button>
+<!-- ВСТАВИТЬ СЮДА ↓↓↓ -->
+<button class="stage-row" onclick="openPanel('place4')">
+<div class="stage-left"><div class="stage-name">4 МЕСТО</div><div class="stage-date">01.12.2026</div></div>
+<div class="stage-info-btn">Информация</div>
+</button>
+<button class="stage-row" onclick="openPanel('place5')">
+<div class="stage-left"><div class="stage-name">5 МЕСТО</div><div class="stage-date">17.12.2026</div></div>
+<div class="stage-info-btn">Информация</div>
+</button>
+<!-- ВСТАВИТЬ СЮДА ↑↑↑ -->
 </div>
 
 <!-- Плитки эмодзи 2×2 -->
@@ -424,7 +434,7 @@ body{background:#05060f;font-family:'Inter',-apple-system,sans-serif;min-height:
 </div>
 
 <!-- ===== Версия сайта (еле заметная) ===== -->
-<div class="version-tag">v1.04</div>
+<div class="version-tag">v1.06</div>
 
 <!-- ===== Панель: 1 МЕСТО ===== -->
 <div class="panel-overlay" id="overlay-place1" onclick="closePanel('place1')"></div>
@@ -442,6 +452,10 @@ body{background:#05060f;font-family:'Inter',-apple-system,sans-serif;min-height:
 <div class="prize-row">
 <div class="prize-row-label">Дата проведения</div>
 <div class="prize-row-value pending" id="datePlace1">31.12.2026</div>
+</div>
+<div class="prize-row">
+<div class="prize-row-label">Время</div>
+<div class="prize-row-value pending" id="timePlace1">В 20 Часов 30 Минут</div>
 </div>
 <div class="prize-row">
 <div class="prize-row-label">Победитель</div>
@@ -470,6 +484,10 @@ body{background:#05060f;font-family:'Inter',-apple-system,sans-serif;min-height:
 <div class="prize-row-value pending" id="datePlace2">21.12.2026</div>
 </div>
 <div class="prize-row">
+<div class="prize-row-label">Время</div>
+<div class="prize-row-value pending" id="timePlace1">В 20 Часов 30 Минут</div>
+</div>
+<div class="prize-row">
 <div class="prize-row-label">Победитель</div>
 <div class="prize-row-value pending" id="winnerPlace2">Пока не определён</div>
 </div>
@@ -496,6 +514,10 @@ body{background:#05060f;font-family:'Inter',-apple-system,sans-serif;min-height:
 <div class="prize-row-value pending" id="datePlace3">08.12.2026</div>
 </div>
 <div class="prize-row">
+<div class="prize-row-label">Время</div>
+<div class="prize-row-value pending" id="timePlace1">В 20 Часов 30 Минут</div>
+</div>
+<div class="prize-row">
 <div class="prize-row-label">Победитель</div>
 <div class="prize-row-value pending" id="winnerPlace3">Пока не определён</div>
 </div>
@@ -504,15 +526,90 @@ body{background:#05060f;font-family:'Inter',-apple-system,sans-serif;min-height:
 </div>
 </div>
 
-<!-- ===== Проверка участника ===== -->
-<div class="panel-overlay" id="overlay-check" onclick="closePanel('check')"></div>
-<div class="panel" id="panel-check">
+<!-- ===== Панель: 4 МЕСТО ===== -->
+<div class="panel-overlay" id="overlay-place4" onclick="closePanel('place4')"></div>
+<div class="panel" id="panel-place4">
 <div class="panel-handle"></div>
-<div class="panel-header"><div class="panel-title">ПРОВЕРКА УЧАСТНИКА</div><div class="panel-close" onclick="closePanel('check')">✕</div></div>
-<div class="check-desc">Введите свой статик, чтобы узнать статус участия</div>
-<div class="input-group"><label class="input-label">Статик</label><input type="text" class="input-field" id="inputStatic" placeholder="XXX-XXX" maxlength="7" inputmode="numeric" autocomplete="off"></div>
-<button class="check-btn" onclick="checkParticipant()">Проверить</button>
-<div class="result-area" id="resultArea"></div>
+<div class="panel-header"><div class="panel-title">4 МЕСТО</div><div class="panel-close" onclick="closePanel('place4')">✕</div></div>
+<div class="prize-panel-body">
+<div class="prize-place-badge">
+<div class="prize-place-icon">🎖️</div>
+<div class="prize-place-info">
+<div class="prize-place-name">4 место</div>
+<div class="prize-place-amount">ИВИ</div>
+</div>
+</div>
+<div class="prize-row">
+<div class="prize-row-label">Дата проведения</div>
+<div class="prize-row-value pending" id="datePlace4">01.12.2026</div>
+</div>
+<div class="prize-row">
+<div class="prize-row-label">Время</div>
+<div class="prize-row-value pending" id="timePlace1">В 20 Часов 30 Минут</div>
+</div>
+<div class="prize-row">
+<div class="prize-row-label">Победитель</div>
+<div class="prize-row-value pending" id="winnerPlace4">Пока не определён</div>
+</div>
+<a class="prize-stream-btn" id="streamPlace4" href="https://www.twitch.tv/PLACEHOLDER" target="_blank" rel="noopener">Смотреть трансляцию</a>
+<div class="prize-note">Победитель будет объявлен во время трансляции розыгрыша.</div>
+</div>
+</div>
+
+<!-- ===== Панель: 5 МЕСТО ===== -->
+<div class="panel-overlay" id="overlay-place5" onclick="closePanel('place5')"></div>
+<div class="panel" id="panel-place5">
+<div class="panel-handle"></div>
+<div class="panel-header"><div class="panel-title">5 МЕСТО</div><div class="panel-close" onclick="closePanel('place5')">✕</div></div>
+<div class="prize-panel-body">
+<div class="prize-place-badge">
+<div class="prize-place-icon">🏅</div>
+<div class="prize-place-info">
+<div class="prize-place-name">5 место</div>
+<div class="prize-place-amount">RUTUBE + PREMIER</div>
+</div>
+</div>
+<div class="prize-row">
+<div class="prize-row-label">Дата проведения</div>
+<div class="prize-row-value pending" id="datePlace5">17.12.2026</div>
+</div>
+<div class="prize-row">
+<div class="prize-row-label">Время</div>
+<div class="prize-row-value pending" id="timePlace1">В 20 Часов 30 Минут</div>
+</div>
+<div class="prize-row">
+<div class="prize-row-label">Победитель</div>
+<div class="prize-row-value pending" id="winnerPlace5">Пока не определён</div>
+</div>
+<a class="prize-stream-btn" id="streamPlace5" href="https://www.twitch.tv/PLACEHOLDER" target="_blank" rel="noopener">Смотреть трансляцию</a>
+<div class="prize-note">Победитель будет объявлен во время трансляции розыгрыша.</div>
+</div>
+</div>
+
+<!-- FAQ -->
+<div class="panel-overlay" id="overlay-faq" onclick="closePanel('faq')"></div>
+<div class="panel" id="panel-faq">
+<div class="panel-handle"></div>
+<div class="panel-header"><div class="panel-title">ЧАСТЫЕ ВОПРОСЫ</div><div class="panel-close" onclick="closePanel('faq')">✕</div></div>
+
+<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-question"><span>Сколько стоит участие?</span><span class="faq-arrow">▼</span></div><div class="faq-answer">Участие полностью бесплатное. Никаких взносов и платежей.</div></div>
+
+<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-question"><span>Как попасть в основной розыгрыш?</span><span class="faq-arrow">▼</span></div><div class="faq-answer">Подать заявку в гугл-форме (центральная кнопка на главном экране) или выиграть в Колесе Фортуны (1 из 3 путёвок) / вернуться в игру через «Колесо возврата» на 2 и 4 местах.</div></div>
+
+<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-question"><span>Как работает Колесо Фортуны?</span><span class="faq-arrow">▼</span></div><div class="faq-answer">Колесо доступно с <strong>23 по 29 Ноября</strong>. В нём разыгрываются 3 путёвки в 5-е место. Прокрутить можно только <strong>1 раз</strong>. Если вы обновите страницу и попытаетесь прокрутить снова — результат не будет засчитан. Прокрутка под чужим статиком карается дисквалификацией.</div></div>
+
+<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-question"><span>Когда пройдут этапы розыгрыша?</span><span class="faq-arrow">▼</span></div><div class="faq-answer">📅 <strong>5 Место</strong> — 01.12.2026 (Вылет + Колесо на 300$)<br>📅 <strong>4 Место</strong> — 08.12.2026 (700$ + Колесо на возврат)<br>📅 <strong>3 Место</strong> — 17.12.2026 (Вылет + Колесо на 300$)<br>📅 <strong>2 Место</strong> — 21.12.2026 (800$ + Колесо на возврат)<br>📅 <strong>1 Место</strong> — 31.12.2026 (1000$ + Колесо на 300$)</div></div>
+
+<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-question"><span>Какой призовой фонд?</span><span class="faq-arrow">▼</span></div><div class="faq-answer">
+🥇 1 место — 1 000$<br>
+🥈 2 место — 800$<br>
+🥉 3 место — 700$<br>
+🎖️ 4 место — 700$<br>
+🏅 5 место — Вылет (шанс вернуться через Колесо)<br>
+<br>Общий призовой фонд — <strong>2 500$</strong> и дополнительные призы от Колеса.</div></div>
+
+<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-question"><span>Можно ли подать несколько заявок?</span><span class="faq-arrow">▼</span></div><div class="faq-answer">1 человек = 1 заявка. Несколько заявок от одного лица не принимаются.</div></div>
+
 </div>
 
 <!-- ===== FAQ ===== -->
@@ -521,11 +618,10 @@ body{background:#05060f;font-family:'Inter',-apple-system,sans-serif;min-height:
 <div class="panel-handle"></div>
 <div class="panel-header"><div class="panel-title">ЧАСТЫЕ ВОПРОСЫ</div><div class="panel-close" onclick="closePanel('faq')">✕</div></div>
 <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-question"><span>Сколько стоит участие?</span><span class="faq-arrow">▼</span></div><div class="faq-answer">Участие полностью бесплатное. Никаких взносов и платежей.</div></div>
-<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-question"><span>Когда пройдёт розыгрыш?</span><span class="faq-arrow">▼</span></div><div class="faq-answer">Розыгрыши пройдут в декабре: 3 место — 08.12.2026 | 2 место — 21.12.2026 | 1 место — 31.12.2026.</div></div>
-<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-question"><span>Какой призовой фонд?</span><span class="faq-arrow">▼</span></div><div class="faq-answer">Общий призовой фонд — 2 500 ₽:<br>🥇 1 место — 1 000 ₽<br>🥈 2 место — 800 ₽<br>🥉 3 место — 700 ₽</div></div>
-<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-question"><span>Как подать заявку на участие?</span><span class="faq-arrow">▼</span></div><div class="faq-answer">Нажмите плитку «Заявка» на главной — откроется Google-форма.</div></div>
-<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-question"><span>Как работает колесо фортуны?</span><span class="faq-arrow">▼</span></div><div class="faq-answer">Колесо доступно с 1 декабря по 7 января. Оно может открыться в любое время. Введите статик, крутите и забирайте приз.</div></div>
-<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-question"><span>Как получить приз?</span><span class="faq-arrow">▼</span></div><div class="faq-answer">Организатор связывается с вами и запрашивает реквизиты карты. Выплата от 1 часа до 3 дней.</div></div>
+<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-question"><span>Как работает Колесо Фортуны?</span><span class="faq-arrow">▼</span></div><div class="faq-answer">Колесо доступно с <strong>23 по 29 Ноября</strong>. В нём разыгрываются 3 путёвки в 5-е место. Прокрутить можно только <strong>1 раз</strong>. Если вы обновите страницу и попытаетесь прокрутить снова — результат не будет засчитан. Прокрутка под чужим статиком карается дисквалификацией.</div></div>
+<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-question"><span>Когда пройдут этапы розыгрыша?</span><span class="faq-arrow">▼</span></div><div class="faq-answer">📅 <strong>5 Место</strong> — 01.12.2026 (Вылет + Колесо на 300$)<br>📅 <strong>4 Место</strong> — 08.12.2026 (700$ + Колесо на возврат)<br>📅 <strong>3 Место</strong> — 17.12.2026 (Вылет + Колесо на 300$)<br>📅 <strong>2 Место</strong> — 21.12.2026 (800$ + Колесо на возврат)<br>📅 <strong>1 Место</strong> — 31.12.2026 (1000$ + Колесо на 300$)</div></div>
+<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-question"><span>Как попасть в основной розыгрыш?</span><span class="faq-arrow">▼</span></div><div class="faq-answer">Вам нужно выиграть в Колесе Фортуны (1 из 3 путёвок) или вернуться в игру через «Колесо возврата» на 2 и 4 местах.</div></div>
+<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-question"><span>Какой призовой фонд?</span><span class="faq-arrow">▼</span></div><div class="faq-answer">Общий призовой фонд — 2 500$ и дополнительные призы от Колеса:<br>🥇 1 место — 1 000$<br>🥈 2 место — 800$<br>🥉 3 место — 700$<br>4 место — 700$<br>5 место — Вылет (шанс вернуться через Колесо)</div></div>
 <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-question"><span>Можно ли подать несколько заявок?</span><span class="faq-arrow">▼</span></div><div class="faq-answer">1 человек = 1 заявка. Несколько заявок от одного лица не принимаются.</div></div>
 </div>
 
@@ -633,25 +729,29 @@ body{background:#05060f;font-family:'Inter',-apple-system,sans-serif;min-height:
 <div class="panel" id="panel-wheel">
 <div class="panel-handle"></div>
 <div class="panel-header"><div class="panel-title">КОЛЕСО ФОРТУНЫ</div><div class="panel-close" onclick="closePanel('wheel')">✕</div></div>
-
-
+<div class="wheel-desc" style="text-align: left; background: rgba(250, 204, 21, 0.1); border: 1px solid rgba(250, 204, 21, 0.3); padding: 15px; border-radius: 14px; margin-bottom: 20px;">
+<strong style="color: #facc15; display: block; margin-bottom: 8px; font-size: 14px;">⚠️ ВАЖНЫЕ ПРАВИЛА:</strong>
+<ul style="font-size: 12px; color: rgba(255,255,255,0.8); line-height: 1.6; padding-left: 15px;">
+<li>Колесо работает с <strong>23 по 29 Ноября</strong>.</li>
+<li>Вращать можно <strong>только 1 раз</strong>.</li>
+<li>Попытка обновить страницу и прокрутить еще раз <strong>не принимается</strong> (2-й и 3-й раз аннулируются).</li>
+<li>Вращение колеса под <strong>чужим статиком</strong> приведет к дисквалификации участника который пытался прокрутить.</li>
+</ul>
+</div>
 <div class="wheel-form" id="wheelForm">
 <div class="input-group"><label class="input-label">Ваш статик</label><input type="text" class="input-field" id="wheelStaticInput" placeholder="XXX-XXX" maxlength="7" inputmode="numeric" autocomplete="off"></div>
 </div>
-
 <div class="wheel-locked hidden" id="wheelLocked">
 <div class="wheel-locked-icon" id="wheelLockedIcon">🕐</div>
 <div class="wheel-locked-text" id="wheelLockedText">КОЛЕСО ДОСТУПНО ПО ВТОРНИКАМ</div>
 <div class="wheel-locked-sub" id="wheelLockedSub"></div>
 <div class="wheel-locked-static" id="wheelLockedStatic" style="display:none;">XXX-XXX</div>
 </div>
-
 <div class="wheel-wrapper" id="wheelWrapper">
 <div class="wheel-pointer"></div>
 <div class="wheel" id="wheel"></div>
 <div class="wheel-center"><span>🎟️</span></div>
 </div>
-
 <button class="wheel-spin-btn" id="spinBtn" onclick="spinWheel()">КРУТИТЬ</button>
 <div class="wheel-result" id="wheelResult"></div>
 </div>
@@ -718,7 +818,7 @@ const participantsData = [
     },
     {
         static: "830-292",
-        name: "Павел",
+        name: "Участник 7",
         stages: [
             { stage: 1, playing: true, won: false, note: "Участвует" },
             { stage: 2, playing: true, won: false, note: "Участвует" },
